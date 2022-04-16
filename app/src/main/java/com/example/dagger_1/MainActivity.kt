@@ -1,6 +1,7 @@
 package com.example.dagger_1
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dagger_1.di.ServerModule
 import dagger.Lazy
@@ -22,6 +23,9 @@ class MainActivity : AppCompatActivity() {
     @ServerModule.Prod("1")
     lateinit var serverApi2: ServerApi
 
+    @Inject
+    lateinit var mainActivityPresenter: MainActivityPresenter
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,11 +33,16 @@ class MainActivity : AppCompatActivity() {
 
         val appComponent = (application as App).appComponent
         appComponent.injectMainActivity(this)
-        val mainActivityPresenter = appComponent.getMainActivityPresenter()
         networkUtilsLazy = appComponent.getNetworkUtilsLazy()
         val networkUtils = networkUtilsLazy.get()
         networkUtilsProvider = appComponent.getNetworkUtilsProvider()
         val networkUtils2 = networkUtilsProvider.get()
         serverApi = appComponent.getServerApiProd()
     }
+
+    @Inject
+    fun postInit(networkUtils: NetworkUtils){
+        Log.d("VVVV", "MainActivity.postInit networkutils = ${networkUtils}")
+    }
+
 }
