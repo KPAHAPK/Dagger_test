@@ -2,6 +2,7 @@ package com.example.dagger_1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.dagger_1.di.ServerModule
 import dagger.Lazy
 import javax.inject.Inject
 import javax.inject.Named
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     //Named get/inject
     private lateinit var serverApi: ServerApi
     @Inject
-    @Named("Prod")
+    @ServerModule.Prod
     lateinit var serverApi2: ServerApi
 
 
