@@ -4,6 +4,7 @@ import android.app.Application
 import com.example.dagger_1.di.AppComponent
 import com.example.dagger_1.di.AppModule
 import com.example.dagger_1.di.DaggerAppComponent
+import com.example.dagger_1.di.ServerModule
 
 class App : Application() {
 
@@ -12,9 +13,8 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         appComponent = DaggerAppComponent
-            .builder()
-            .appModule(AppModule(this))
-            .build()
+            .factory()
+            .create(this, ServerModule())
 
     }
 }

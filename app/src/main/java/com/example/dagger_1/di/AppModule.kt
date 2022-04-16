@@ -7,18 +7,14 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-class AppModule(private val context: Context) {
-
+class AppModule {
     @Provides
-    fun getAppContext(): Context = context
-
-    @Provides
-    fun getSPreferences(): SharedPreferences {
+    fun getSPreferences(context: Context): SharedPreferences {
         return context.getSharedPreferences("prefs", Context.MODE_PRIVATE)
     }
 
     @Provides
-    fun getResources(): Resources{
+    fun getResources(context: Context): Resources{
         return context.resources
     }
 }
