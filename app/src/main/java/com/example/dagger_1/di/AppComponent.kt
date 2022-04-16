@@ -9,9 +9,7 @@ import dagger.Component
 import dagger.Lazy
 import javax.inject.Provider
 
-@Component(modules = [
-    StorageModule::class,
-    NetworkModule::class,
+@Component(modules = [AppModule::class,
     MainModule::class,
     ServerModule::class,
     EventModule::class])
