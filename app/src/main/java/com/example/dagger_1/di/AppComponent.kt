@@ -1,5 +1,6 @@
 package com.example.dagger_1.di
 
+import android.content.Context
 import com.example.dagger_1.MainActivity
 import com.example.dagger_1.MainActivityPresenter
 import com.example.dagger_1.NetworkUtils
@@ -10,15 +11,20 @@ import dagger.Lazy
 import javax.inject.Provider
 
 @Component(modules = [AppModule::class,
-    MainModule::class,
     ServerModule::class,
     EventModule::class])
 interface AppComponent {
     fun injectMainActivity(mainActivity: MainActivity)
+
+    @Component.Builder
+    interface AppCompBuilder{
+        fun appModule(appModule: AppModule): AppCompBuilder
+        fun buildAppComp(): AppComponent
+    }
+
     fun getMainActivityPresenter(): MainActivityPresenter
     fun getNetworkUtilsLazy(): Lazy<NetworkUtils>
     fun getNetworkUtilsProvider(): Provider<NetworkUtils>
-
     @ServerModule.Prod("1")
     fun getServerApiProd(): ServerApi
     fun getEventHandlers(): Map<EventModule.EventHandlerType, EventHandler>
