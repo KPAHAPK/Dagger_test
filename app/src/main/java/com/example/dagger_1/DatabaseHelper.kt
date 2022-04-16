@@ -1,4 +1,4 @@
 package com.example.dagger_1
 
-class DatabaseHelper {
+class DatabaseHelper(private val repository: Repository) {
 }
