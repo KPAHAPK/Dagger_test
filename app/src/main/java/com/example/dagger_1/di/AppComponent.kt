@@ -20,6 +20,7 @@ interface AppComponent {
     fun getMainActivityPresenter(): MainActivityPresenter
     fun getNetworkUtilsLazy(): Lazy<NetworkUtils>
     fun getNetworkUtilsProvider(): Provider<NetworkUtils>
+
     @ServerModule.Prod("1")
     fun getServerApiProd(): ServerApi
     fun getEventHandlers(): Map<EventModule.EventHandlerType, EventHandler>

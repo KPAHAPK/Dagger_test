@@ -1,5 +1,5 @@
 package com.example.dagger_1
 
-class ConnectionManager {
+import javax.inject.Inject
 
-}
+class ConnectionManager @Inject constructor()

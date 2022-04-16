@@ -7,8 +7,6 @@ import dagger.MapKey
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap
-import dagger.multibindings.StringKey
-import javax.inject.Qualifier
 
 @Module
 class EventModule {

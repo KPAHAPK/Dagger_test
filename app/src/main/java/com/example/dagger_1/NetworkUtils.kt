@@ -1,4 +1,5 @@
 package com.example.dagger_1
 
-class NetworkUtils(private val connectionManager: ConnectionManager) {
-}
+import javax.inject.Inject
+
+class NetworkUtils @Inject constructor(private val connectionManager: ConnectionManager)
