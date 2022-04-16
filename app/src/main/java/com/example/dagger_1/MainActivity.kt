@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     //Named get/inject
     private lateinit var serverApi: ServerApi
     @Inject
-    @ServerModule.Prod
+    @ServerModule.Prod("1")
     lateinit var serverApi2: ServerApi
 
 

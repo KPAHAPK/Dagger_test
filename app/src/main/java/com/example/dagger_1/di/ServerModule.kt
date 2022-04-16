@@ -8,19 +8,21 @@ import javax.inject.Qualifier
 
 @Module
 class ServerModule {
-
     @Qualifier
     @Retention(AnnotationRetention.RUNTIME)
-    annotation class Prod
+    annotation class Prod(val value: String = "prod1.server.com")
 
     @Qualifier
     @Retention(AnnotationRetention.RUNTIME)
     annotation class Dev
 
-
-    @Prod
+    @Prod("1")
     @Provides
-    fun provideServerApiProd(): ServerApi = ServerApi("prod.server.com")
+    fun provideServerApiProd1(): ServerApi = ServerApi("prod1.server.com")
+
+    @Prod("2")
+    @Provides
+    fun provideServerApiProd2(): ServerApi = ServerApi("prod2.server.com")
 
     @Dev
     @Provides

@@ -19,6 +19,6 @@ interface AppComponent {
     fun getMainActivityPresenter(): MainActivityPresenter
     fun getNetworkUtilsLazy(): Lazy<NetworkUtils>
     fun getNetworkUtilsProvider(): Provider<NetworkUtils>
-    @ServerModule.Prod
+    @ServerModule.Prod("1")
     fun getServerApiProd(): ServerApi
 }
