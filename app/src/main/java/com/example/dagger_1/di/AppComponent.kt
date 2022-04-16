@@ -22,5 +22,5 @@ interface AppComponent {
     fun getNetworkUtilsProvider(): Provider<NetworkUtils>
     @ServerModule.Prod("1")
     fun getServerApiProd(): ServerApi
-    fun getEventHandlers(): Map<String, EventHandler>
+    fun getEventHandlers(): Map<EventModule.EventHandlerType, EventHandler>
 }
