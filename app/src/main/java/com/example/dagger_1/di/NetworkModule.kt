@@ -14,4 +14,5 @@ class NetworkModule {
 
     @Provides
     fun provideConnectionManager() = ConnectionManager()
+
 }
