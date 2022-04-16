@@ -5,6 +5,7 @@ import com.example.dagger_1.MainActivityPresenter
 import com.example.dagger_1.NetworkUtils
 import dagger.Component
 import dagger.Lazy
+import javax.inject.Provider
 
 @Component(modules = [
     StorageModule::class,
@@ -13,5 +14,6 @@ import dagger.Lazy
 interface AppComponent {
     fun injectMainActivity(mainActivity: MainActivity)
     fun getMainActivityPresenter(): MainActivityPresenter
-    fun getNetworkUtils(): Lazy<NetworkUtils>
+    fun getNetworkUtilsLazy(): Lazy<NetworkUtils>
+    fun getNetworkUtilsProvider(): Provider<NetworkUtils>
 }
