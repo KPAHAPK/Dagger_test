@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import dagger.Lazy
 import javax.inject.Inject
+import javax.inject.Named
 import javax.inject.Provider
 
 class MainActivity : AppCompatActivity() {
@@ -16,6 +17,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var networkUtilsLazy: Lazy<NetworkUtils>
     //Same as Lazy but each call = new Object
     private lateinit var networkUtilsProvider: Provider<NetworkUtils>
+    //Named get/inject
+    private lateinit var serverApi: ServerApi
+    @Inject
+    @Named("Prod")
+    lateinit var serverApi2: ServerApi
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,5 +35,6 @@ class MainActivity : AppCompatActivity() {
         val networkUtils = networkUtilsLazy.get()
         networkUtilsProvider = appComponent.getNetworkUtilsProvider()
         val networkUtils2 = networkUtilsProvider.get()
+        serverApi = appComponent.getServerApiProd()
     }
 }
