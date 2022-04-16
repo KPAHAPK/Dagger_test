@@ -13,7 +13,7 @@ class App : Application() {
         super.onCreate()
         appComponent = DaggerAppComponent
             .builder()
-            .appModule(AppModule(this))
+            .context(this)
             .buildAppComp()
 
     }

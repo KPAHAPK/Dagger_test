@@ -6,6 +6,7 @@ import com.example.dagger_1.MainActivityPresenter
 import com.example.dagger_1.NetworkUtils
 import com.example.dagger_1.ServerApi
 import com.example.dagger_1.events.EventHandler
+import dagger.BindsInstance
 import dagger.Component
 import dagger.Lazy
 import javax.inject.Provider
@@ -18,8 +19,10 @@ interface AppComponent {
 
     @Component.Builder
     interface AppCompBuilder{
-        fun appModule(appModule: AppModule): AppCompBuilder
         fun buildAppComp(): AppComponent
+
+        @BindsInstance
+        fun context(context: Context): AppCompBuilder
     }
 
     fun getMainActivityPresenter(): MainActivityPresenter
