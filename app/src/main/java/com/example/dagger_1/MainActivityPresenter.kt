@@ -1,6 +1,8 @@
 package com.example.dagger_1
 
-class MainActivityPresenter(
+import javax.inject.Inject
+
+class MainActivityPresenter @Inject constructor(
     val databaseHelper: DatabaseHelper,
     val networkUtils: NetworkUtils
 ) {
