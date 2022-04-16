@@ -20,7 +20,7 @@ interface AppComponent {
     @Component.Builder
     interface AppCompBuilder{
         fun buildAppComp(): AppComponent
-
+        fun serverModule(serverModule: ServerModule): AppCompBuilder
         @BindsInstance
         fun context(context: Context): AppCompBuilder
     }
