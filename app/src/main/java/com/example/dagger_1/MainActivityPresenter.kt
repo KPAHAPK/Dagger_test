@@ -4,6 +4,5 @@ import javax.inject.Inject
 
 class MainActivityPresenter @Inject constructor(
     val databaseHelper: DatabaseHelper,
-    val networkUtils: NetworkUtils
-) {
-}
+    val networkUtils: NetworkUtils,
+)

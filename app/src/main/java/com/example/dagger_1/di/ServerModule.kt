@@ -3,7 +3,6 @@ package com.example.dagger_1.di
 import com.example.dagger_1.ServerApi
 import dagger.Module
 import dagger.Provides
-import javax.inject.Named
 import javax.inject.Qualifier
 
 @Module

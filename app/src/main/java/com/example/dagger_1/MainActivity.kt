@@ -1,21 +1,23 @@
 package com.example.dagger_1
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.dagger_1.di.ServerModule
 import dagger.Lazy
 import javax.inject.Inject
-import javax.inject.Named
 import javax.inject.Provider
 
 class MainActivity : AppCompatActivity() {
 
     //Only one object
     private lateinit var networkUtilsLazy: Lazy<NetworkUtils>
+
     //Same as Lazy but each call = new Object
     private lateinit var networkUtilsProvider: Provider<NetworkUtils>
+
     //Named get/inject
     private lateinit var serverApi: ServerApi
+
     @Inject
     @ServerModule.Prod("1")
     lateinit var serverApi2: ServerApi
