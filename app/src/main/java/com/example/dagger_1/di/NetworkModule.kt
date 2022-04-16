@@ -9,10 +9,4 @@ import dagger.Provides
 @Module
 class NetworkModule {
 
-    @Provides
-    fun provideNetworkUtils(connectionManager: ConnectionManager): NetworkUtils = NetworkUtils(connectionManager)
-
-    @Provides
-    fun provideConnectionManager() = ConnectionManager()
-
 }

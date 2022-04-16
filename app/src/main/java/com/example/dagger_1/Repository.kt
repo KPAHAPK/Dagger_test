@@ -1,5 +1,7 @@
 package com.example.dagger_1
 
-class Repository {
+import javax.inject.Inject
+
+class Repository @Inject constructor() {
 
 }

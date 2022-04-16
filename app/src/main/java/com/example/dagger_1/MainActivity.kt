@@ -10,10 +10,6 @@ import javax.inject.Provider
 
 class MainActivity : AppCompatActivity() {
 
-    @Inject
-    lateinit var databaseHelper: DatabaseHelper
-    @Inject
-    lateinit var networkUtils: NetworkUtils
     //Only one object
     private lateinit var networkUtilsLazy: Lazy<NetworkUtils>
     //Same as Lazy but each call = new Object

@@ -7,10 +7,4 @@ import dagger.Provides
 
 @Module
 class StorageModule {
-
-    @Provides
-    fun providesDatabaseHelper(repository: Repository): DatabaseHelper = DatabaseHelper(repository)
-
-    @Provides
-    fun providesRepository(): Repository = Repository()
 }
