@@ -17,12 +17,9 @@ import javax.inject.Provider
 interface AppComponent {
     fun injectMainActivity(mainActivity: MainActivity)
 
-    @Component.Builder
-    interface AppCompBuilder{
-        fun buildAppComp(): AppComponent
-        fun serverModule(serverModule: ServerModule): AppCompBuilder
-        @BindsInstance
-        fun context(context: Context): AppCompBuilder
+    @Component.Factory
+    interface AppCompFactory{
+        fun create(@BindsInstance context: Context, serverModule: ServerModule): AppComponent
     }
 
     fun getMainActivityPresenter(): MainActivityPresenter
