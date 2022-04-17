@@ -14,7 +14,7 @@ class AppModule {
     }
 
     @Provides
-    fun getResources(context: Context): Resources{
+    fun getResources(context: Context): Resources {
         return context.resources
     }
 }
