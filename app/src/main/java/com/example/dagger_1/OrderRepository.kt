@@ -4,5 +4,4 @@ import com.example.dagger_1.di.Scopes
 import javax.inject.Inject
 
 @Scopes.AppScope
-class OrderRepository @Inject constructor() {
-}
+class OrderRepository @Inject constructor()

@@ -1,7 +1,7 @@
 package com.example.dagger_1
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.dagger_1.di.OrderComponent
 
 class OrderActivity : AppCompatActivity() {
