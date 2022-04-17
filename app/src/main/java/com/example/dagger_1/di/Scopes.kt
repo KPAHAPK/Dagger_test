@@ -6,4 +6,8 @@ class Scopes {
     @Scope
     @Retention(AnnotationRetention.RUNTIME)
     annotation class OrderScope
+
+    @Scope
+    @Retention(AnnotationRetention.RUNTIME)
+    annotation class AppScope
 }
