@@ -16,4 +16,5 @@ interface AppComponent {
     }
 
     fun getDatabaseHelper(): DatabaseHelper
+    fun getOrderComponent(): OrderComponent
 }
