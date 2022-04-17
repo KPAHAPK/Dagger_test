@@ -6,5 +6,5 @@ import dagger.assisted.AssistedFactory
 
 @AssistedFactory
 interface ServerApiFactory {
-    fun create(@Assisted("host") host: String, @Assisted("port") port: String): ServerApi
+    fun create(@Assisted("host") host: String, @Assisted("port") port: String = "80"): ServerApi
 }
