@@ -13,15 +13,10 @@ import javax.inject.Provider
 @Component(modules = [AppModule::class,
     EventModule::class])
 interface AppComponent {
-    fun injectMainActivity(mainActivity: MainActivity)
 
     @Component.Factory
     interface AppCompFactory {
         fun create(@BindsInstance context: Context): AppComponent
     }
-
-    fun getMainActivityPresenter(): MainActivityPresenter
-    fun getNetworkUtilsLazy(): Lazy<NetworkUtils>
-    fun getNetworkUtilsProvider(): Provider<NetworkUtils>
-    fun getEventHandlers(): Map<EventModule.EventHandlerType, EventHandler>
+    fun getMainComponent(): MainComponent
 }
