@@ -11,8 +11,9 @@ interface MainComponent{
     fun getMainActivityPresenter(): MainActivityPresenter
     fun getDataBaseHelper(): DatabaseHelper//У саба нет storagemodule но он знает о DatabaseHelper
 
-    @Subcomponent.Factory
-    interface Factory{
-        fun create(@BindsInstance activity: Activity): MainComponent
+    @Subcomponent.Builder
+    interface Builder{
+        @BindsInstance fun activity(activity: Activity): Builder
+        fun build(): MainComponent
     }
 }

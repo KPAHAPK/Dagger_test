@@ -6,7 +6,7 @@ import android.content.res.Resources
 import dagger.Module
 import dagger.Provides
 
-@Module
+@Module(subcomponents = [MainComponent::class])
 class AppModule {
     @Provides
     fun getSPreferences(context: Context): SharedPreferences {

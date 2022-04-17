@@ -1,6 +1,7 @@
 package com.example.dagger_1.di
 
 import android.content.Context
+import com.example.dagger_1.MainActivity
 import dagger.BindsInstance
 import dagger.Component
 
@@ -14,5 +15,5 @@ interface AppComponent {
         fun create(@BindsInstance context: Context): AppComponent
     }
 
-    fun getMainComponentFactory(): MainComponent.Factory
+    fun injectMainActivity(activity: MainActivity)
 }
