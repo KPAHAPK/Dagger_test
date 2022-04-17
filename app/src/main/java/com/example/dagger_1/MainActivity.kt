@@ -12,17 +12,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val appComponent = (application as App).appComponent
-        val mainComponent = appComponent.getMainComponentBuilder()
-            .activity(this)
-            .build()
+        val mainComponent = appComponent.getMainComponentFactory()
+            .create(this)
         val mainActivityPresenter = mainComponent.getMainActivityPresenter()
         mainActivityPresenter.postInit()
         mainComponent.getDataBaseHelper()
     }
-
-    @Inject
-    fun postInit(networkUtils: NetworkUtils) {
-        Log.d("VVVV", "MainActivity.postInit networkutils = ${networkUtils}")
-    }
-
 }

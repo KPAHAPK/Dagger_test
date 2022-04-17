@@ -14,5 +14,5 @@ interface AppComponent {
         fun create(@BindsInstance context: Context): AppComponent
     }
 
-    fun getMainComponentBuilder(): MainComponent.Builder
+    fun getMainComponentFactory(): MainComponent.Factory
 }
