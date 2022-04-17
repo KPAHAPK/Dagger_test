@@ -13,9 +13,8 @@ class MainModule {
     @Provides
     fun provideMainActivityPresenter(
         databaseHelper: DatabaseHelper,
-        networkUtils: NetworkUtils,
-        activity: Activity,
+        networkUtils: NetworkUtils
     ) =
-        MainActivityPresenter(databaseHelper, networkUtils, activity)
+        MainActivityPresenter(databaseHelper, networkUtils)
 
 }

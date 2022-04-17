@@ -1,19 +1,12 @@
 package com.example.dagger_1.di
 
 import android.app.Activity
-import com.example.dagger_1.DatabaseHelper
 import com.example.dagger_1.MainActivityPresenter
 import dagger.BindsInstance
-import dagger.Subcomponent
+import dagger.Component
 
-@Subcomponent(modules = [MainModule::class])
+@Component(modules = [MainModule::class], dependencies = [AppComponent::class])
 interface MainComponent{
-    fun getMainActivityPresenter(): MainActivityPresenter
-    fun getDataBaseHelper(): DatabaseHelper//У саба нет storagemodule но он знает о DatabaseHelper
 
-    @Subcomponent.Builder
-    interface Builder{
-        @BindsInstance fun activity(activity: Activity): Builder
-        fun build(): MainComponent
-    }
+    fun getMainActivityPresenter(): MainActivityPresenter
 }
