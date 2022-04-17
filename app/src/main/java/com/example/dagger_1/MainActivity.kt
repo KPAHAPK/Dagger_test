@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         val mainComponent = appComponent.getMainComponent()
         val mainActivityPresenter = mainComponent.getMainActivityPresenter()
         mainActivityPresenter.postInit()
+        mainComponent.getDataBaseHelper()
     }
 
     @Inject

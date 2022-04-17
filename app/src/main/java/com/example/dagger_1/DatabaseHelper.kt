@@ -4,6 +4,6 @@ import android.content.Context
 import com.example.dagger_1.events.EventHandler
 import javax.inject.Inject
 
-class DatabaseHelper @Inject constructor(private val repository: Repository, val context: Context) {
+class DatabaseHelper (private val repository: Repository, val context: Context) {
     fun getEventHandlers(): Set<EventHandler> = setOf()
 }
