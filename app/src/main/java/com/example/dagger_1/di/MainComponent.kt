@@ -7,4 +7,5 @@ import dagger.Subcomponent
 interface MainComponent {
 
     fun getMainActivityPresenter(): MainActivityPresenter
+    fun getViewModelFactory(): ViewModelFactory
 }

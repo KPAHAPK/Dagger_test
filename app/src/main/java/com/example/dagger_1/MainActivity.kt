@@ -2,6 +2,7 @@ package com.example.dagger_1
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,6 +12,9 @@ class MainActivity : AppCompatActivity() {
 
         val appComponent = (application as App).appComponent
         val mainComponent = appComponent.getMainComponent()
+        val viewModelFactory = mainComponent.getViewModelFactory()
+        val viewModel1 = ViewModelProvider(this, viewModelFactory).get(ViewModel1::class.java)
+        val viewModel2 = ViewModelProvider(this, viewModelFactory).get(ViewModel2::class.java)
     }
 
 }
