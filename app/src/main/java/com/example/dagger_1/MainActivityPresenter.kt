@@ -6,5 +6,5 @@ import javax.inject.Inject
 class MainActivityPresenter @Inject constructor(
     private  val serverApiFactory: ServerApiFactory
 ) {
-    var serverApi = serverApiFactory.create("dev1.server.com")
+    var serverApi = serverApiFactory.create("dev1.server.com", "80")
 }
